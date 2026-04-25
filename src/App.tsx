@@ -11,6 +11,9 @@ import Register from "./pages/auth/Register";
 import Onboarding from "./pages/onboarding/Onboarding";
 import ClassroomPage from "./pages/classroom/ClassroomPage";
 import CreateClassroom from "./pages/classroom/CreateClassroom";
+import DashboardLayout from "./components/layout/DashboardLayout";
+import Profile from "./pages/profile/Profile";
+import Settings from "./pages/settings/Settings";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -81,10 +84,14 @@ const App = () => (
             <Route path="/register" element={<GuestRoute><Register /></GuestRoute>} />
             <Route path="/onboarding" element={<OnboardingRoute><Onboarding /></OnboardingRoute>} />
 
-            {/* Classroom-only authenticated routes */}
-            <Route path="/dashboard" element={<ProtectedRoute><CreateClassroom /></ProtectedRoute>} />
-            <Route path="/classroom/create" element={<ProtectedRoute><CreateClassroom /></ProtectedRoute>} />
-            <Route path="/classroom/:id" element={<ProtectedRoute><ClassroomPage /></ProtectedRoute>} />
+            {/* Authenticated routes with sidebar layout */}
+            <Route path="/" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
+              <Route path="dashboard" element={<CreateClassroom />} />
+              <Route path="classroom/create" element={<CreateClassroom />} />
+              <Route path="classroom/:id" element={<ClassroomPage />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="settings" element={<Settings />} />
+            </Route>
 
             <Route path="*" element={<NotFound />} />
           </Routes>

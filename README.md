@@ -1,86 +1,171 @@
 # OpenClass Learner
 
-OpenClass Learner is an Agentic AI powered classroom generation platform built for **Blackathon by BlackWPT**.  
-It lets a learner create a classroom from a custom topic, then experience an interactive lesson flow with multi-agent instruction, whiteboard support, quizzes, and progress-aware playback.
+**OpenClass Learner** is an **Agentic AI-powered classroom generation platform** built for **Blackathon by BlackWPT**.  
 
-## Why This Project
+It transforms a single topic into a **fully structured, interactive learning experience**, where multiple AI agents collaborate to simulate a real classroom environment.
 
-Most learners can ask questions, but struggle to get a complete, structured lesson experience tailored to their level.  
-OpenClass Learner turns a single topic prompt into a full classroom session with generated scenes, guided narration, interactive moments, and adaptive pacing.
+---
 
-## Core Features
+## 🧠 What Makes This Different
 
-- Topic-based classroom generation (`/api/classroom/custom`)
-- Classroom session lifecycle: generating -> ready -> in-class runtime
-- Interactive classroom player with:
-  - agent-led narration
-  - whiteboard rendering/actions
-  - discussion/Q&A flows
-  - quiz checkpoints
-- Classroom history list on dashboard:
-  - view all generated classrooms
-  - open any previous classroom
-  - delete classroom sessions
-- Authentication + onboarding flow
+Most AI learning tools act like chatbots — they answer questions.
 
-## Current User Flow
+OpenClass Learner behaves like a **teaching system**.
 
-1. Landing page (`/`)
-2. Create account or login (`/register`, `/login`)
-3. Onboarding (`/onboarding`)
-4. Dashboard (`/dashboard`) - direct classroom creation + classroom list
-5. Enter created classroom (`/classroom/:id`)
+It uses a **multi-agent architecture** where each AI agent has a specialized teaching role. Together, they generate and deliver a complete lesson experience with structure, flow, and interactivity.
 
-## Tech Stack
+---
+
+## 🤖 The Agent System (Core Value Proposition)
+
+Instead of one model doing everything, OpenClass Learner uses **coordinated agents**, each responsible for a different part of the classroom experience:
+
+### 🎓 1. Lesson Architect Agent
+- Breaks down the topic into a structured curriculum
+- Defines lesson flow: introduction → explanation → examples → assessment
+- Ensures content is pedagogically sound
+
+---
+
+### 🧑‍🏫 2. Instructor Agent
+- Delivers the lesson in a human-like teaching style
+- Explains concepts step-by-step
+- Adjusts tone and pacing based on difficulty
+
+---
+
+### 🧩 3. Whiteboard / Visualization Agent
+- Converts explanations into visual representations
+- Draws diagrams, steps, and structured breakdowns
+- Makes abstract concepts easier to understand
+
+---
+
+### 💬 4. Interaction Agent
+- Handles questions from the learner
+- Simulates classroom discussions
+- Provides clarifications and alternative explanations
+
+---
+
+### 📝 5. Assessment Agent
+- Generates quizzes and checkpoints
+- Evaluates learner understanding in real time
+- Provides feedback and reinforcement learning
+
+---
+
+### 🔄 How They Work Together
+
+These agents operate as a **coordinated system**, not independently:
+
+1. Lesson Architect designs the learning path  
+2. Instructor delivers the content  
+3. Visualization Agent enhances understanding  
+4. Interaction Agent responds to learner input  
+5. Assessment Agent evaluates progress  
+
+👉 The result is a **complete classroom simulation powered by AI collaboration**, not a single response model.
+
+---
+
+## 🚀 Key Features
+
+### 📚 AI Classroom Generation
+- Generate full interactive classrooms from a single topic  
+- Endpoint: `/api/classroom/custom`
+
+---
+
+### 🎮 Interactive Learning Experience
+- Agent-led teaching sessions  
+- Whiteboard-based explanations  
+- Real-time Q&A simulation  
+- Embedded quizzes and checkpoints  
+
+---
+
+### 📊 Adaptive Learning Flow
+- Tracks learner progress through sessions  
+- Allows pause and resume  
+- Adjusts pacing based on interaction  
+
+---
+
+### 🗂️ Classroom Management
+- View all generated classrooms  
+- Reopen past learning sessions  
+- Delete or manage sessions  
+
+---
+
+### 🔐 Authentication System
+- User accounts  
+- Onboarding flow  
+- Personalized classroom history  
+
+---
+
+## 🔄 User Flow
+
+1. Landing Page → `/`  
+2. Register / Login → `/register`, `/login`  
+3. Onboarding → `/onboarding`  
+4. Dashboard → `/dashboard`  
+   - Create new classroom  
+   - View past classrooms  
+5. Classroom Session → `/classroom/:id`  
+
+---
+
+## 🏗️ Tech Stack
 
 ### Frontend
-- React + TypeScript + Vite
-- Tailwind CSS + Radix UI components
-- React Router
+- React + TypeScript + Vite  
+- Tailwind CSS + Radix UI  
+- React Router  
 
 ### Backend
-- Node.js + Express + TypeScript
-- MongoDB + Mongoose
-- Zod validation
+- Node.js + Express + TypeScript  
+- MongoDB + Mongoose  
+- Zod validation  
 
-## Monorepo Layout
+---
 
-```text
+## 📁 Monorepo Structure
+
+```
 openclass_learner/
-  src/                    # frontend app
+  src/                    # Frontend app
   server/
-    src/                  # backend API
-  .env                    # root env (shared project copy)
-  server/.env             # backend runtime env
+    src/                  # Backend API
+  .env
+  server/.env
 ```
 
-## Prerequisites
+---
 
-- Node.js 20+ (Node 22 recommended)
-- npm 9+
-- MongoDB Atlas URI (or local MongoDB)
+## ⚙️ Setup Instructions
 
-## Environment Configuration
+### Requirements
+- Node.js 20+  
+- npm 9+  
+- MongoDB Atlas or local MongoDB  
 
-This project expects:
+---
 
-- Frontend API base in `.env.local`
-- Backend secrets/config in `server/.env`
+### Frontend Environment (`.env.local`)
 
-### 1) Frontend `.env.local`
-
-Create `openclass_learner/.env.local`:
-
-```env
+```
 VITE_API_URL=http://localhost:5000/api
 ```
 
-### 2) Backend `server/.env`
+---
 
-Create or update `openclass_learner/server/.env`:
+### Backend Environment (`server/.env`)
 
-```env
-MONGODB_URI=your_mongodb_connection_string
+```
+MONGODB_URI=your_mongodb_uri
 JWT_SECRET=your_jwt_secret
 JWT_EXPIRES_IN=7d
 PORT=5000
@@ -88,58 +173,37 @@ NODE_ENV=development
 CLIENT_URL=http://localhost:8080
 ```
 
-You can keep your existing model-provider keys (Gemini/OpenAI/etc.) in this same file.
+---
 
-## Run Locally
-
-Open two terminals.
-
-### Terminal A - Backend
-
-```bash
-cd server
-npm install
-npm run dev
-```
-
-Backend runs on: `http://localhost:5000`
-
-### Terminal B - Frontend
-
-```bash
-npm install
-npm run dev
-```
-
-Frontend runs on: `http://localhost:8080`
-
-## Production Build
-
-### Frontend
-
-```bash
-npm run build
-```
+## ▶️ Running Locally
 
 ### Backend
 
 ```bash
 cd server
-npm run build
+npm install
+npm run dev
 ```
 
-## Troubleshooting
+### Frontend
 
-### Dependency corruption (example: lodash/recharts resolution errors)
+```bash
+npm install
+npm run dev
+```
 
-If you see errors like `Could not resolve "lodash/isNil"`:
+---
+
+## 🚨 Troubleshooting
+
+### Dependency Issues
 
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
-On Windows PowerShell:
+Windows:
 
 ```powershell
 Remove-Item node_modules -Recurse -Force
@@ -147,29 +211,35 @@ Remove-Item package-lock.json -Force
 npm install
 ```
 
-Then restart dev server.
+---
 
-### CORS issues
-
+### CORS Issues
 Ensure:
-- frontend URL matches backend `CLIENT_URL`
-- frontend uses `VITE_API_URL=http://localhost:5000/api`
+- `VITE_API_URL` matches backend URL  
+- `CLIENT_URL=http://localhost:8080`
 
-## API (Classroom-Critical Endpoints)
+---
 
-- `POST /api/classroom/custom` - create classroom from topic
-- `GET /api/classroom` - list classrooms for current user
-- `GET /api/classroom/:id` - fetch classroom detail/runtime state
-- `PUT /api/classroom/:id/progress` - update classroom progress
-- `POST /api/classroom/:id/quiz` - submit quiz answers
-- `DELETE /api/classroom/:id` - delete classroom
+## 🧪 API Endpoints
 
-## Hackathon Note
+- `POST /api/classroom/custom` → Generate classroom from topic  
+- `GET /api/classroom` → Get user classrooms  
+- `GET /api/classroom/:id` → Load classroom session  
+- `PUT /api/classroom/:id/progress` → Update progress  
+- `POST /api/classroom/:id/quiz` → Submit answers  
+- `DELETE /api/classroom/:id` → Delete classroom  
 
-This repository is optimized around a single strong user journey for judging:
-**create account -> onboarding -> create classroom -> learn inside generated classroom**.
+---
 
-## Team
+## 🏁 Hackathon Focus
 
-Built for **Blackathon by BlackWPT**.
+This project is optimized around a single high-impact flow:
+
+> **User enters a topic → AI agents build a classroom → user learns interactively**
+
+---
+
+## 👥 Built For
+
+**Blackathon by BlackWPT**
 
