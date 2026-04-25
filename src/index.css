@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ── Light mode (default) ─────────────────────────────────────────────── */
+  :root {
+    --background: 220 30% 97%;
+    --foreground: 220 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 12%;
+
+    --primary: 245 70% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 92%;
+    --secondary-foreground: 220 25% 20%;
+
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 48%;
+
+    --accent: 245 70% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 86%;
+    --input: 220 15% 90%;
+    --ring: 245 70% 55%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 25% 95%;
+    --sidebar-foreground: 220 25% 15%;
+    --sidebar-primary: 245 70% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 90%;
+    --sidebar-accent-foreground: 220 25% 15%;
+    --sidebar-border: 220 15% 86%;
+    --sidebar-ring: 245 70% 55%;
+
+    /* Custom tokens */
+    --glow-indigo: 245 70% 55%;
+    --surface-elevated: 220 20% 99%;
+    --card-border: 220 15% 86% / 0.8;
+    --agent-active: 152 69% 38%;
+    --slide-card-bg: hsl(220 20% 96%);
+  }
+
+  /* ── Dark mode ────────────────────────────────────────────────────────── */
+  .dark {
+    --background: 222 50% 8%;
+    --foreground: 40 20% 93%;
+
+    --card: 220 30% 10%;
+    --card-foreground: 40 20% 93%;
+
+    --popover: 220 30% 10%;
+    --popover-foreground: 40 20% 93%;
+
+    --primary: 245 78% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 14%;
+    --secondary-foreground: 40 20% 93%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 245 78% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 15%;
+    --input: 220 15% 18%;
+    --ring: 245 78% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 30% 6%;
+    --sidebar-foreground: 40 20% 93%;
+    --sidebar-primary: 245 78% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 14%;
+    --sidebar-accent-foreground: 40 20% 93%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 245 78% 60%;
+
+    /* Custom tokens */
+    --glow-indigo: 245 78% 60%;
+    --surface-elevated: 220 25% 12%;
+    --card-border: 0 0% 100% / 0.06;
+    --slide-card-bg: linear-gradient(155deg, hsl(245 60% 8%) 0%, hsl(220 50% 6%) 55%, hsl(240 40% 7%) 100%);
+    --agent-active: 152 69% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  /* glass-nav — light default */
+  .glass-nav {
+    backdrop-filter: blur(12px);
+    background: hsla(220, 30%, 97%, 0.88);
+    border-bottom: 1px solid hsla(220, 15%, 86%, 0.8);
+  }
+  /* glass-nav — dark override */
+  .dark .glass-nav {
+    background: hsla(222, 50%, 8%, 0.8);
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.06);
+  }
+
+  .glow-radial {
+    background: radial-gradient(
+      600px circle at 50% 40%,
+      hsla(245, 70%, 55%, 0.08) 0%,
+      transparent 70%
+    );
+  }
+  .dark .glow-radial {
+    background: radial-gradient(
+      600px circle at 50% 40%,
+      hsla(245, 78%, 60%, 0.1) 0%,
+      transparent 70%
+    );
+  }
+
+  .glow-radial-sm {
+    background: radial-gradient(
+      400px circle at 50% 50%,
+      hsla(245, 70%, 55%, 0.06) 0%,
+      transparent 70%
+    );
+  }
+  .dark .glow-radial-sm {
+    background: radial-gradient(
+      400px circle at 50% 50%,
+      hsla(245, 78%, 60%, 0.08) 0%,
+      transparent 70%
+    );
+  }
+
+  /* card-surface — light default */
+  .card-surface {
+    background: hsl(0, 0%, 100%);
+    border: 1px solid hsla(220, 15%, 86%, 0.8);
+  }
+  /* card-surface — dark override */
+  .dark .card-surface {
+    background: hsl(220, 25%, 12%);
+    border: 1px solid hsla(0, 0%, 100%, 0.06);
+  }
+
+  /* ── Lamp toggle animations ─────────────────────────────────────────────── */
+  .animate-pulse-slow {
+    animation: pulse-slow 2.6s ease-in-out infinite;
+  }
+
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+  }
+
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Auto-play mount animations (no .visible gate) ──────────────────────── */
+  .anim-fade-in-up-auto {
+    animation: fadeInUp 0.7s ease both;
+  }
+  .anim-fade-in-up-sm-auto {
+    animation: fadeInUpSm 0.5s ease both;
+  }
+  .anim-fade-in-left-auto {
+    animation: fadeInLeft 0.8s ease both;
+  }
+  .anim-fade-in-right-auto {
+    animation: fadeInRight 0.8s ease both;
+  }
+
+  /* Delay utilities (shared by auto-play + scroll variants) */
+  .anim-delay-100  { animation-delay: 0.1s; }
+  .anim-delay-200  { animation-delay: 0.2s; }
+  .anim-delay-300  { animation-delay: 0.3s; }
+  .anim-delay-350  { animation-delay: 0.35s; }
+  .anim-delay-400  { animation-delay: 0.4s; }
+  .anim-delay-500  { animation-delay: 0.5s; }
+  .anim-delay-600  { animation-delay: 0.6s; }
+
+  /* ── Scroll-triggered animation primitives ──────────────────────────────── */
+  .anim-fade-in-left,
+  .anim-fade-in-right,
+  .anim-fade-in-up,
+  .anim-fade-in-up-sm {
+    opacity: 0;
+    animation-fill-mode: both;
+  }
+  .anim-fade-in-left  { transform: translateX(-50px); }
+  .anim-fade-in-right { transform: translateX(50px); }
+  .anim-fade-in-up    { transform: translateY(40px); }
+  .anim-fade-in-up-sm { transform: translateY(20px); }
+
+  .anim-fade-in-left.visible  { animation: fadeInLeft  0.8s ease forwards; }
+  .anim-fade-in-right.visible { animation: fadeInRight 0.8s ease forwards; }
+  .anim-fade-in-up.visible    { animation: fadeInUp    0.7s ease forwards; }
+  .anim-fade-in-up-sm.visible { animation: fadeInUpSm  0.5s ease forwards; }
+
+  /* ── Feature-row split entrance (parent .visible cascades to children) ── */
+  .feat-row .feat-text,
+  .feat-row .feat-mock {
+    opacity: 0;
+    animation-fill-mode: both;
+  }
+
+  /* Default (text on left, mock on right) */
+  .feat-row.visible .feat-text {
+    animation: fadeInLeft  0.8s ease 0.35s forwards;
+  }
+  .feat-row.visible .feat-mock {
+    animation: fadeInRight 0.8s ease 0.2s  forwards;
+  }
+
+  /* Flipped (mock on left, text on right) */
+  .feat-row.feat-flipped.visible .feat-text {
+    animation: fadeInRight 0.8s ease 0.35s forwards;
+  }
+  .feat-row.feat-flipped.visible .feat-mock {
+    animation: fadeInLeft  0.8s ease 0.2s  forwards;
+  }
+
+  /* ── Tutor avatar wave rings ───────────────────────────────────────────── */
+  .tutor-wave {
+    animation: tutorWave 2s ease-out infinite;
+  }
+
+  /* Subtle breathing pulse while the LLM is thinking */
+  .tutor-think {
+    animation: tutorThink 1.8s ease-in-out infinite;
+  }
+
+  /* Tutor speech text fade-in-up */
+  .tutor-msg-enter {
+    animation: tutorMsgEnter 0.4s ease forwards;
+  }
+
+  /* History drawer slide-up */
+  .tutor-drawer-open {
+    animation: tutorDrawerOpen 0.3s ease forwards;
+  }
+
+  .tutor-drawer-close {
+    animation: tutorDrawerClose 0.25s ease forwards;
+  }
+}
+
+/* ── Keyframes (outside @layer for broadest browser support) ────────────── */
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUpSm {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tutorWave {
+  0%   { transform: scale(1);    opacity: 0.55; }
+  70%  { transform: scale(1.55); opacity: 0; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
+@keyframes tutorThink {
+  0%, 100% { transform: scale(1);    opacity: 1; }
+  50%       { transform: scale(0.95); opacity: 0.75; }
+}
+
+@keyframes tutorMsgEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tutorDrawerOpen {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes tutorDrawerClose {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100%); }
+}
+
+/* ── Lamp toggle ─────────────────────────────────────────────────────────── */
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
