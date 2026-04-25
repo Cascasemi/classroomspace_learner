@@ -1,5 +1,5 @@
 /**
- * Whiteboard Types — NeuroSpace Classroom
+ * Whiteboard Types — Openclass_learner Classroom
  *
  * Models the whiteboard state and all element/action types that agents
  * can emit during live discussion rounds.

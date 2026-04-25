@@ -1,5 +1,5 @@
 /**
- * KaTeX Math — NeuroSpace
+ * KaTeX Math — Openclass_learner
  *
  * Provides:
  *  - <KatexMath>  — renders a single LaTeX string (inline or display mode)

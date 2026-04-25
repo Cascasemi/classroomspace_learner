@@ -1,5 +1,5 @@
 /**
- * XP & Level Utility — NeuroSpace
+ * XP & Level Utility — Openclass_learner
  *
  * XP events:
  *   • Scene completed in classroom  → +15 XP per scene

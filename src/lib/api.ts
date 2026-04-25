@@ -13,7 +13,7 @@ class ApiClient {
   }
 
   private getToken(): string | null {
-    return localStorage.getItem('neurospace_token');
+    return localStorage.getItem('openclass_learner_token');
   }
 
   private async request<T>(

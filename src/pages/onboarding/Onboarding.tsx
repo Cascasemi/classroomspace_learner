@@ -89,7 +89,7 @@ export default function Onboarding() {
         {/* Logo */}
         <div className="flex items-center gap-2 mb-10">
           <span className="w-2.5 h-2.5 rounded-full bg-primary" />
-          <span className="text-xl font-semibold">NeuroSpace</span>
+          <span className="text-xl font-semibold">Openclass_learner</span>
         </div>
 
         {/* Progress Steps */}

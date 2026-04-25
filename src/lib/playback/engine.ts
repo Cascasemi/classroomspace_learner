@@ -1,7 +1,7 @@
 /**
  * Playback Engine — Frontend
  *
- * Drives NeuroSpace's rich-text lesson format.
+ * Drives Openclass_learner's rich-text lesson format.
  *
  * Processes actions sequentially:
  *   - speech → display text, wait for reading time (or TTS)

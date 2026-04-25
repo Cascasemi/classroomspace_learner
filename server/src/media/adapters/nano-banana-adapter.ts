@@ -8,7 +8,7 @@ import type {
 
 const DEFAULT_BASE_URL = 'https://generativelanguage.googleapis.com';
 const DEFAULT_MODEL = 'gemini-3.1-flash-image-preview';
-const CURL_STATUS_MARKER = '__NEUROSPACE_HTTP_STATUS__:';
+const CURL_STATUS_MARKER = '__OPENCLASS_LEARNER_HTTP_STATUS__:';
 const execFileAsync = promisify(execFile);
 
 interface GeminiPart {

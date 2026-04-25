@@ -194,7 +194,7 @@ export function listenOnce(options?: { lang?: string; timeout?: number }): Promi
  *   form.append('file', audio, 'recording.webm');
  *   form.append('language', lang);
  *
- *   const token = localStorage.getItem('neurospace_token');
+ *   const token = localStorage.getItem('openclass_learner_token');
  *   const res = await fetch('/api/asr/whisper', {
  *     method: 'POST',
  *     headers: { Authorization: `Bearer ${token}` },

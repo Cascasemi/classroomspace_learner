@@ -1,7 +1,7 @@
 /**
  * Browser Native ASR (Speech Recognition) Hook
  *
- * English-only for NeuroSpace (no i18n language switching).
+ * English-only for Openclass_learner (no i18n language switching).
  * Uses Web Speech API — client-side, no API key required.
  */
 

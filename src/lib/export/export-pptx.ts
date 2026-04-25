@@ -1,5 +1,5 @@
 /**
- * PPTX Export — converts a NeuroSpace classroom into a PowerPoint file.
+ * PPTX Export — converts a Openclass_learner classroom into a PowerPoint file.
  *
  * Supports rich-text section format (lesson + quiz scenes).
  *
@@ -14,7 +14,7 @@ import type { ClassroomData, Scene, ContentSection, AgentConfig } from '@/lib/pl
 const THEME = {
   bg: '0f1117',          // dark background
   card: '1a1d27',        // slide background
-  accent: '3b82f6',      // NeuroSpace blue
+  accent: '3b82f6',      // Openclass_learner blue
   accentAlt: '8b5cf6',   // purple accent
   text: 'e2e8f0',        // primary text
   muted: '94a3b8',       // secondary text
@@ -65,8 +65,8 @@ function addTitleSlide(pptx: PptxGenJS, classroom: ClassroomData) {
     line: { color: THEME.accent },
   });
 
-  // NeuroSpace logo text
-  slide.addText('NeuroSpace', {
+  // Openclass_learner logo text
+  slide.addText('Openclass_learner', {
     x: 0.4, y: 0.3, w: 4, h: 0.4,
     fontSize: 11,
     color: THEME.accent,
@@ -380,15 +380,15 @@ function addQuizSlide(
 // ==================== Public Export ====================
 
 /**
- * Build and download a PowerPoint file from a NeuroSpace classroom.
+ * Build and download a PowerPoint file from a Openclass_learner classroom.
  */
 export function exportClassroomToPptx(classroom: ClassroomData): void {
   const pptx = new PptxGenJS();
 
   pptx.layout = 'LAYOUT_WIDE'; // 13.33 × 7.5 inches (16:9)
   pptx.title = classroom.title;
-  pptx.subject = 'NeuroSpace Classroom Export';
-  pptx.company = 'NeuroSpace';
+  pptx.subject = 'Openclass_learner Classroom Export';
+  pptx.company = 'Openclass_learner';
 
   const totalScenes = classroom.scenes.length;
 

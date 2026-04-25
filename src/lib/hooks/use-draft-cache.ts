@@ -1,7 +1,7 @@
 /**
  * useDraftCache — Generic debounced localStorage cache hook
  *
- * NeuroSpace adaptation: no 'use client' directive (Vite SPA, always client).
+ * Openclass_learner adaptation: no 'use client' directive (Vite SPA, always client).
  *
  * Reads the initial value synchronously from localStorage on mount, then
  * exposes debounced writes so rapid updates don't overwhelm storage.

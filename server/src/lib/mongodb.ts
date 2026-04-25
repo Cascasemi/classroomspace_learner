@@ -97,7 +97,7 @@ async function getClient(): Promise<MongoClient> {
 
 // ── Database accessor ───────────────────────────────────────────────────────
 
-const DB_NAME = 'neurospace';
+const DB_NAME = 'openclass_learner';
 
 export async function getNativeDb(): Promise<Db> {
   const client = await getClient();

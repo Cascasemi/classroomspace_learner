@@ -1,7 +1,7 @@
 /**
  * useAudioRecorder — Mic recording hook for the classroom discussion overlay
  *
- * NeuroSpace single-provider simplification:
+ * Openclass_learner single-provider simplification:
  *   1. Primary: MediaRecorder → POST /api/transcription (Whisper)
  *   2. Fallback: Browser Web Speech API (if Whisper not configured on server,
  *      or if MediaRecorder is not supported)

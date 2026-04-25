@@ -1,5 +1,5 @@
 ﻿/**
- * Agent Prompt Builder — NeuroSpace Live Discussion Mode
+ * Agent Prompt Builder — Openclass_learner Live Discussion Mode
  *
  * Constructs system and user prompts for three classroom agents
  * (teacher, assistant, student) during live discussion breaks.
@@ -9,7 +9,7 @@
  *   { "type": "action", "name": "wb_draw_latex", "params": {} }
  *   { "type": "action", "name": "spotlight",     "params": { "elementId": "section_abc" } }
  *
- * NeuroSpace classroom surfaces:
+ * Openclass_learner classroom surfaces:
  *   – Whiteboard: always available (drawing canvas).
  *   – Spotlight / Laser: available on lesson slides — focus student attention on a section.
  *   – English-only instruction set.

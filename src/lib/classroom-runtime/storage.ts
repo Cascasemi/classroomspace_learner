@@ -2,7 +2,7 @@ import type { PlaybackEngineState } from '@/lib/playback/types';
 import { createEmptyWhiteboard } from '@/lib/whiteboard/reducer';
 import type { ClassroomRuntimeSnapshot } from './types';
 
-const STORAGE_PREFIX = 'neurospace:classroom-runtime:';
+const STORAGE_PREFIX = 'openclass_learner:classroom-runtime:';
 const SNAPSHOT_VERSION = 1 as const;
 
 interface StoredPlaybackState extends Omit<PlaybackEngineState, 'revealedSectionIds'> {

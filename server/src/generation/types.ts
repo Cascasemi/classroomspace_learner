@@ -1,5 +1,5 @@
 /**
- * NeuroSpace Generation Types
+ * Openclass_learner Generation Types
  *
  * Two-stage generation pipeline:
  *   Stage 1: Curriculum/Topic → Scene Outlines

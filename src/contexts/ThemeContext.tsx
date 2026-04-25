@@ -4,11 +4,11 @@
  * Dark mode  : adds class "dark" to <html>
  * Light mode : removes class "dark" from <html>
  *
- * Default: dark (the original NeuroSpace aesthetic).
+ * Default: dark (the original Openclass_learner aesthetic).
  */
 import { createContext, useContext, useEffect, useState } from 'react';
 
-const STORAGE_KEY = 'neurospace-theme';
+const STORAGE_KEY = 'openclass_learner-theme';
 
 interface ThemeContextValue {
   isDark: boolean;

@@ -16,7 +16,7 @@
  *  │                                                          │
  *  │  STUDY HISTORY · last 28 days      [commit grid]        │
  *  │                                                          │
- *  │  NeuroSpace                         neurospace.app      │
+ *  │  Openclass_learner                         openclass_learner.app      │
  *  └──────────────────────────────────────────────────────────┘
  */
 
@@ -302,16 +302,16 @@ export async function generateStreakImage(opts: StreakImageOptions): Promise<Blo
   // ── 8. Footer branding ─────────────────────────────────────────────────────
   const FOOTER_Y = H - 14;
 
-  // NeuroSpace wordmark  
+  // Openclass_learner wordmark  
   ctx.font = `700 12px system-ui, -apple-system, sans-serif`;
   ctx.fillStyle = 'hsla(22, 100%, 65%, 0.50)';
   ctx.textBaseline = 'bottom';
-  ctx.fillText('NeuroSpace', 32, FOOTER_Y);
+  ctx.fillText('Openclass_learner', 32, FOOTER_Y);
 
   ctx.textAlign = 'right';
   ctx.font = `500 10.5px system-ui, -apple-system, sans-serif`;
   ctx.fillStyle = 'rgba(255,255,255,0.15)';
-  ctx.fillText('neurospace.app', W - 32, FOOTER_Y);
+  ctx.fillText('openclass_learner.app', W - 32, FOOTER_Y);
   ctx.textAlign = 'left';
 
   // ── 9. Return as PNG blob ──────────────────────────────────────────────────
@@ -325,13 +325,13 @@ export async function generateStreakImage(opts: StreakImageOptions): Promise<Blo
 
 /** Share via Web Share API (mobile) or download PNG (desktop). */
 export async function shareOrDownloadStreak(blob: Blob, streakDays: number): Promise<void> {
-  const fileName = `neurospace-streak-${streakDays}days.png`;
+  const fileName = `openclass_learner-streak-${streakDays}days.png`;
 
   if (navigator.canShare && navigator.canShare({ files: [new File([blob], fileName, { type: 'image/png' })] })) {
     // Native share sheet (iOS Safari, Android Chrome, etc.)
     await navigator.share({
-      title: `I'm on a ${streakDays}-day learning streak on NeuroSpace! 🔥`,
-      text:  `Check out my ${streakDays}-day study streak on NeuroSpace – the adaptive AI learning platform. #NeuroSpace #StudyStreak`,
+      title: `I'm on a ${streakDays}-day learning streak on Openclass_learner! 🔥`,
+      text:  `Check out my ${streakDays}-day study streak on Openclass_learner – the adaptive AI learning platform. #Openclass_learner #StudyStreak`,
       files: [new File([blob], fileName, { type: 'image/png' })],
     });
   } else {

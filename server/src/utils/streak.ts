@@ -1,5 +1,5 @@
 /**
- * Streak Utility — NeuroSpace
+ * Streak Utility — Openclass_learner
  *
  * Option-C definition: any of the following in a calendar day counts as a study day:
  *   1. At least one classroom scene completed

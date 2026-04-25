@@ -1,12 +1,12 @@
 /**
- * Prompt Templates for NeuroSpace Generation Pipeline
+ * Prompt Templates for Openclass_learner Generation Pipeline
  *
  * Each prompt set has a system prompt and a user prompt builder.
  *
  * Pipeline stages:
  *   1. requirements-to-outlines: curriculum/topic → SceneOutline[]
  *   2. lesson-content: outline → LessonContent (rich text sections)
- *   3. lesson-actions: outline + content → Action[]
+ *   3. lesson-actions: outline → Action[]
  *   4. quiz-content: outline → QuizContent
  *   5. quiz-actions: outline + questions → Action[]
  */
@@ -15,7 +15,7 @@ import type { MediaGenerationRequest } from './types';
 
 // ==================== 1. OUTLINE GENERATION ====================
 
-export const OUTLINE_SYSTEM = `# NeuroSpace Scene Outline Generator
+export const OUTLINE_SYSTEM = `# Openclass_learner Scene Outline Generator
 
 You are a professional adaptive learning course designer. Your task is to transform curriculum content or a free-form topic into a structured series of teaching scenes.
 
@@ -169,7 +169,7 @@ export function buildOutlineUserPrompt(input: {
 
 // ==================== 2. LESSON CONTENT ====================
 
-export const LESSON_CONTENT_SYSTEM = `# NeuroSpace Lesson Content Generator
+export const LESSON_CONTENT_SYSTEM = `# Openclass_learner Lesson Content Generator
 
 You are an expert educational content creator. Generate rich, structured lesson content as a JSON object.
 

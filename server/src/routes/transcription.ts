@@ -5,7 +5,7 @@
  * Accepts a recorded audio file and returns a text transcript.
  * Falls back cleanly when OPENAI_WHISPER_URL is not configured.
  *
- * NeuroSpace: English-only, single provider (Whisper).
+ * Openclass_learner: English-only, single provider (Whisper).
  */
 
 import { Router } from 'express';
@@ -50,7 +50,7 @@ router.post('/', protect, upload.single('audio'), async (req, res): Promise<void
       contentType: req.file.mimetype || 'audio/webm',
     });
     formData.append('model', 'whisper-1');
-    formData.append('language', 'en'); // English-only for NeuroSpace
+    formData.append('language', 'en'); // English-only for Openclass_learner
 
     const whisperRes = await fetch(env.OPENAI_WHISPER_URL, {
       method: 'POST',
