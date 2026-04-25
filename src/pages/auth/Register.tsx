@@ -61,7 +61,7 @@ export default function Register() {
         <div className="relative z-10 max-w-md px-12">
           <Link to="/" className="flex items-center gap-2 mb-8 hover:opacity-80 transition-opacity">
             <span className="w-3 h-3 rounded-full bg-primary" />
-            <span className="text-2xl font-semibold">NeuroSpace</span>
+            <span className="text-2xl font-semibold">OpenClass Learner</span>
           </Link>
           <h2 className="text-3xl font-semibold mb-4 leading-tight">
             Your AI classroom adapts to how you think
@@ -91,13 +91,13 @@ export default function Register() {
           {/* Mobile logo */}
           <Link to="/" className="lg:hidden flex items-center gap-2 mb-8 hover:opacity-80 transition-opacity">
             <span className="w-2.5 h-2.5 rounded-full bg-primary" />
-            <span className="text-xl font-semibold">NeuroSpace</span>
+            <span className="text-xl font-semibold">OpenClass Learner</span>
           </Link>
 
           {step === 'type' ? (
             <>
               <h1 className="text-2xl font-semibold mb-2">Create your account</h1>
-              <p className="text-muted-foreground mb-8">Choose how you'll use NeuroSpace</p>
+              <p className="text-muted-foreground mb-8">Choose how you'll use OpenClass Learner</p>
 
               <div className="space-y-4">
                 <button

@@ -1,5 +1,5 @@
 /**
- * GenerationProgressScreen � NeuroSpace generation loading experience
+ * GenerationProgressScreen � OpenClass Learner generation loading experience
  *
  * Full-page immersive loading UI while the AI pipeline runs.
  * Design language: "neural network coming alive" � nodes pulse, beams of
@@ -237,7 +237,7 @@ export default function GenerationProgressScreen({
                 />
               </div>
               <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-primary/55">
-                NeuroSpace AI
+                OpenClass Learner AI
               </span>
             </div>
 

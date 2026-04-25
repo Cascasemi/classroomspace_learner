@@ -40,7 +40,7 @@ export default function Login() {
         <div className="relative z-10 max-w-md px-12">
           <Link to="/" className="flex items-center gap-2 mb-8 hover:opacity-80 transition-opacity">
             <span className="w-3 h-3 rounded-full bg-primary" />
-            <span className="text-2xl font-semibold">NeuroSpace</span>
+            <span className="text-2xl font-semibold">OpenClass Learner</span>
           </Link>
           <h2 className="text-3xl font-semibold mb-4 leading-tight">
             Welcome back to your AI classroom
@@ -57,10 +57,10 @@ export default function Login() {
           {/* Mobile logo */}
           <Link to="/" className="lg:hidden flex items-center gap-2 mb-8 hover:opacity-80 transition-opacity">
             <span className="w-2.5 h-2.5 rounded-full bg-primary" />
-            <span className="text-xl font-semibold">NeuroSpace</span>
+            <span className="text-xl font-semibold">OpenClass Learner</span>
           </Link>
 
-          <h1 className="text-2xl font-semibold mb-2">Sign in to NeuroSpace</h1>
+          <h1 className="text-2xl font-semibold mb-2">Sign in to OpenClass Learner</h1>
           <p className="text-muted-foreground mb-8">Enter your credentials to continue</p>
 
           {error && (

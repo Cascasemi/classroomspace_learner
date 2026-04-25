@@ -1,5 +1,5 @@
 /**
- * MathPracticePanel — NeuroSpace
+ * MathPracticePanel — OpenClass Learner
  *
  * Renders a math_practice section:
  *  1. Displays the LaTeX problem for the student

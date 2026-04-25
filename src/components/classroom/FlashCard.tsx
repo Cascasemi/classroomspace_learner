@@ -25,7 +25,7 @@ interface StoredFlashCardState {
 
 function getFlashCardStorageKey(classroomId?: string, sceneId?: string, sectionId?: string): string | null {
   if (!classroomId || !sceneId || !sectionId) return null;
-  return `neurospace:flashcard:${classroomId}:${sceneId}:${sectionId}`;
+  return `OpenClass Learner:flashcard:${classroomId}:${sceneId}:${sectionId}`;
 }
 
 function loadStoredFlashCardState(storageKey: string): StoredFlashCardState | null {
